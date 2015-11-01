@@ -72,17 +72,21 @@ main(int argc, char **argv)
     InfoHash room;
     const InfoHash myid = dht.getId();
 
+    // using the GNU History API
+    using_history();
+
     while (true)
     {
-        std::cout << (connected ? ">> " : "> ");
-        std::string line;
-        std::getline(std::cin, line);
-        static constexpr dht::InfoHash INVALID_ID {};
-
-        if (std::cin.eof())
+        // using the GNU Readline API
+        const char* l = readLine(connected ? ">> " : "> ");
+        if (not l)
             break;
+
+        std::string line = {l};
         if (line.empty())
             continue;
+
+        static constexpr dht::InfoHash INVALID_ID {};
 
         std::istringstream iss(line);
         std::string op, idstr;
