@@ -8,7 +8,7 @@ A lightweight C++11 Distributed Hash Table implementation originally based on ht
 
  * Light and fast C++11 Kademlia DHT library.
  * Distributed shared key->value data-store
- * Clean and powerful distributed map API with storage of arbitrary binary values of up to 56 KB.
+ * Clean and powerful distributed map API with storage of arbitrary binary values of up to 64 KB.
  * Optional public key cryptography layer providing data signature and encryption (using GnuTLS).
  * IPv4 and IPv6 support.
  * Python binding.
@@ -28,7 +28,7 @@ g++ main.cpp -std=c++11 -lopendht -lgnutls
 ## Examples
 ### C++ example
 The `tools` directory includes simple example programs :
-* `dhtnode`, a command line tool, mostly used for debuging, allowing to perform operations supported by the library (get, put etc.) with text values.
+* `dhtnode`, a command line tool to control an OpenDHT node and perform common operations.
 * `dhtchat`, a very simple IM client working over the dht.
 
 Example program launching a DHT node, connecting to the network and performing some basic operations:
